@@ -4,6 +4,7 @@ import React, { useState, useRef, useEffect } from 'react';
 import MetricBox from './MetricBox';
 
 
+
 async function fetchData() {
   try {
     const response = await fetch("http://brownhackathon.devices.brown.edu:5000/data");
@@ -28,14 +29,8 @@ function App() {
 
   const handleFillWater = async () => {
     try {
-      const response = await fetch("http://brownhackathon.devices.brown.edu:5000/water-control", {
+      const response = await fetch("http://brownhackathon.devices.brown.edu:5000/fill", {
         method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({
-          action: "fill"
-        }),
       });
       const data = await response.json(); // Assuming the server sends back some data
       console.log("Water filled:", data);
@@ -47,14 +42,8 @@ function App() {
   
   const handleNotFillWater = async () => {
     try {
-      const response = await fetch("http://brownhackathon.devices.brown.edu:5000/water-control", {
+      const response = await fetch("http://brownhackathon.devices.brown.edu:5000/empty", {
         method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({
-          action: "unfill"
-        }),
       });
       const data = await response.json(); // Assuming the server sends back some data
       console.log("Water unfill action triggered:", data);
@@ -99,7 +88,7 @@ function App() {
 
       }
 
-    }, 1000); // Fetch data every second
+    }, 2000); // Fetch data every second
 
     // Cleanup on component unmount
     return () => clearInterval(intervalId);

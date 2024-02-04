@@ -3,7 +3,7 @@ import './MetricBox.css'; // Importing CSS for styling
 
 const MetricBox = ({ metricName, value, status }) => {
   // Determine the color based on the status
-  const color = status === 1 ? 'red' : status === -1 ? 'red' : 'green';
+  const color = status === 1 ? '#FF2400' : status === -1 ? '#FF2400' : '#56AE57';
 
   return (
     <div className="metric-box" style={{ backgroundColor: color }}>
