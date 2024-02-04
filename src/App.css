@@ -1,33 +1,58 @@
-.App {
-  text-align: center;
+/*
+variables and color
+ */
+ :root {
+  /* color pallet */
+  /* --primary-color: #4866c9; */
+  --primary-color: rgb(220, 251, 254);
+  --secondary-color: #FAEAC0;
+  --accent-color: #DA627D;
+  --second-accent-color: #222E50;
+  --third-accent-color: #667fc4;
 }
 
+/**
+  * Logo styles and logo rotation
+*/
 .App-logo {
-  height: 40vmin;
+  height: 15vmin;
   pointer-events: none;
+}
+.social-logo{
+  height:7vmin;
+  margin-right: 10px;
+  padding-top: 8px;
+  padding-left:8px;
+}
+.explanation-hl{
+  font-weight:600;
+}
+.logo-square{
+  width: 10vh;
+  height:10vh;
+  background-color:white;
+  border-radius: 40%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 10px;
+}
+.logo-square:hover {
+  background-color: var(--secondary-color);
+  transition: all 0.2s ease-out;
+  transform: scale(1.1);
 }
 
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+    animation: App-logo-spin infinite 1s linear;
+
+    /* Comment this out if you want continuous spin */
+    animation-play-state: paused;
+    animation-delay: calc(var(--scroll) * -1s);
+
   }
 }
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
@@ -35,4 +60,441 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+
+/**
+ *  Primary App styling
+*/ 
+.App {
+  display: flex;
+  flex-direction: column; /* Stack children vertically */
+  justify-content: flex-start; /* Align children to the start of the container */
+  height: 100vh; /* Make App take full viewport height */
+  overflow: hidden; /* Prevent scrolling within the App */
+}
+.App-header {
+  padding-top: 5vh;
+
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: var(--second-accent-color);
+}
+.App-main {
+  background-color: transparent;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+
+}
+
+
+
+/*
+ *  Nav styles
+ */
+
+ nav {
+  margin: 0 10px 15px 10px;
+  padding: 0;
+}
+.nav-flex {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 5vw;
+}
+.nav-flex > .flex-row {
+  justify-content: space-between;
+  width: fit-content;
+}
+.nav-flex > .flex-row > a {
+  margin-bottom: 30px;
+  display: block;
+  margin-left: 5vw;
+}
+
+.flex-row {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+
+/*
+section format + colors
+ */
+
+/* section, header {
+  padding: 4rem 2rem 4rem 2rem;
+} */
+section{
+  /* background-color: rgba(0, 0, 0, 0.698); */
+  background-color: rgba(250, 233, 192, 0.952);
+  min-height: 90vh;
+  min-width: 90%;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Adds shadow for floating effect */
+  margin: 30px auto; /* Adds space around sections and centers them */
+  padding: 20px; /* Adds space inside sections */
+  
+  border-radius: 30px 30px 30px 30px; 
+}
+/* section:nth-child(even) {
+  background-color: rgba(250, 233, 192, 0.952);
+}
+section:nth-child(odd) {
+  background-color: rgba(193, 84, 180, 0.821);
+} */
+.title, .title-info-flex, .edges{
+  text-align: left;
+  padding: 0 2rem;
+}
+.title {
+  color: var(--accent-color);
+  margin-bottom: 2rem;
+}
+
+.sub-title {
+  color:rgb(254, 245, 243);
+  margin-bottom:2vh;
+  margin-top:2vh;
+  margin-left: 3vw;
+  
+}
+.exp-element{
+  display: flex;
+  flex-direction: column;
+  
+}
+.element{
+  display: flex;
+  flex-direction: row;
+  /* flex-wrap: wrap; */
+  justify-content: space-between;
+}
+.element-image{
+  display: flex;
+  flex-direction: column;
+  margin-left: 10vh;
+}
+.img-actual{
+  width:60vh;
+  height:40vh;
+  margin-right:10vh;
+  border-radius: 8%;
+}
+.half-lucid-image{
+  width:40vh;
+  height:40vh;
+  margin-right:10vh;
+  border-radius: 10%;
+}
+.course-list{
+  display: flex;
+  align-items: flex-start;
+}
+.stalk-elements{
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  align-content: space-between;
+  flex-wrap: wrap;
+  
+  padding: 0 3%;
+}
+.stalk-element{
+  border-radius: 25px;
+  margin:10px;
+  background-color: var(--secondary-color);
+  min-width: 20vw;
+}
+.stalk-title{
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+
+}
+.current-course{
+  color: var(--second-accent-color)
+}
+.future-course{
+  color: var(--third-accent-color)
+}
+
+
+/*
+ *  Text and heading styles
+**/
+h1 {
+  font-size: 8rem;
+  font-weight: 700;
+  color: var(--accent-color);
+  line-height: .8;
+  z-index: 5;
+  margin-left: 7vw;
+  margin-bottom:6vh;
+  margin-top:7vh;
+}
+h2 {
+  font-size: 2.5rem;
+  /* padding: 0 5%; */
+  padding:5vw;
+}
+h3{
+  color: var(--second-accent-color);
+  display: flex;
+  flex-direction: row;
+  text-align: left;
+  padding: 0 5%;
+  margin-bottom: 0;
+}
+.logos-row{
+  padding: 0 8%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  /* justify-content: space-between; */
+}
+.logos-row-bottom{
+  padding: 0 8%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items:center;
+  flex-wrap: wrap;
+}
+.element-hl{
+  display: flex;
+  flex-direction: column;
+}
+p{
+  display: flex;
+  flex-direction: row;
+  line-height: 1.2;
+  color: var(--second-accent-color);
+  text-align: left;
+  padding: 0 5%;
+  font-size:90%;
+}
+strong {
+  display: inline !important;
+  color: var(--accent-color);
+  font-weight: 800;
+}
+/* .strong-text{
+  display: inline ;
+  color: var(--accent-color);
+  font-weight: 800;
+} */
+ul{
+  display:flex;
+  flex-direction: column;
+  line-height: 1.2;
+  color: var(--second-accent-color);
+  text-align: left;
+  padding: 0 7%;
+  font-size:80%;
+  margin-top: 0;
+}
+span{
+  color: var(--accent-color);
+  font-weight: 800;
+}
+mark.red{
+  color: var(--accent-color);
+  font-weight: 800;
+}
+figcaption{
+  display: flex;
+  flex-direction: row;
+  line-height: 1.2;
+  color: var(--second-accent-color);
+  text-align: left;
+  padding: 0 5%;
+  font-size:70%;
+}
+
+
+/* Link Styling - https://codepen.io/team/css-tricks/pen/xxPORam */
+.link {
+  text-decoration: none;
+  position: relative;
+  color: var(--accent-color);
+  font-weight: 700;
+  font-size: 100%;
+}
+
+.link::before {
+  content: "";
+  background-color: #0000ff77;
+  position: absolute;
+  left: 0;
+  bottom: -0.125rem;
+  width: 100%;
+  height: 2px;
+  z-index: 5;
+  transition: all 0.2s ease-out;
+}
+
+.link:hover::before {
+  bottom: 0;
+  height: 100%;
+  background-color: #0000ff22;
+  border-radius: 5%;
+  transform: scale(1.1);
+}
+
+.subtitle-link {
+  padding-left: 5px;
+  text-decoration: none;
+  position: relative;
+  color: var(--secondary-color);
+  font-weight: 700;
+  
+}
+.subtitle-link::before {
+  transition: all 0.2s ease-out;
+  content: "";
+  background-color: #d4d4f677;
+  position: absolute;
+  left: 5%;
+  /* right:20%; */
+  bottom: 0.0rem;
+  width: 100%;
+  height: 2px;
+  z-index: 5;
+}
+
+
+.subtitle-link:hover::before {
+  transform: scale(1.1);
+  bottom: 0;
+  height: 100%;
+  background-color: #ffffff22;
+  border-radius: 5%;
+  transform: scale(1.1);
+}
+
+.exp-title{
+  color: var(--second-accent-color);
+  display: flex;
+  flex-direction: row;
+  text-align: left;
+  padding: 0 5%;
+  margin-bottom: 0;
+  
+  text-decoration: underline;
+  position: relative;
+  font-weight: 700;
+  font-size: 1.17em;
+}
+.exp-title:hover{
+  transition: all 0.2s ease-out;
+  transform: scale(1.01);
+
+}
+.status-page {
+  display: flex;
+  flex-direction: row; /* Ensure items are laid out in a horizontal line */
+  justify-content: center; /* Center items horizontally in the container */
+  align-items: center; /* Center items vertically (optional if you want vertical centering) */
+  flex-wrap: wrap; /* Allow items to wrap if not enough space */
+  /* gap: 20px; Adds space between the boxes */
+  /* padding: 20px; */
+  margin: 0 auto; /* Center the entire container on the screen */
+  max-width: 100%; /* Maximum width of the container */
+}
+.vert-pair {
+  display: flex;
+  flex-direction: column;
+}
+
+
+
+
+
+/**
+  * Ensures smooth link scroll animation
+*/
+html {
+  scroll-behavior: smooth; 
+}
+
+
+/* Hide insights and alerts sections on mobile devices */
+@media screen and (orientation: landscape){
+  #insights, #alerts, .message, .nav-flex{
+    display: none;
+  }
+  .App {
+    background-image: url('./background.jpeg'); 
+    background-size: cover;
+    background-attachment: fixed;
+    
+  }
+
+  .App-header h1 {
+    font-size: 16px; 
+    text-align: left;
+    margin-left: 20px; 
+    margin-top: 10px; 
+  }
+
+  .status-page {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    background-color: transparent;
+    flex-wrap: nowrap;
+    padding:0;
+    min-height: fit-content;
+  }
+
+  section {
+    background-color: transparent;
+  }
+
+  .metric-box {
+    transform: scale(0.8);
+    flex-wrap: nowrap;
+    background-color: rgba(255, 255, 255, 0.5);
+  }
+}
+
+
+.water-control-buttons {
+  position: fixed;
+  right: 20px;
+  top: 20px;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+}
+
+.water-button {
+  padding: 10px 20px;
+  margin: 5px 0;
+  margin-left:10px;
+  background-color: var(--accent-color);
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s;
+}
+
+.water-button:hover {
+  background-color: var(--second-accent-color);
+}
+
+.water-button:not(:last-child) {
+  margin-bottom: 10px;
 }

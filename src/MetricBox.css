@@ -1,0 +1,27 @@
+.metric-box {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    width: 150px; /* Adjust size as needed */
+    height: 200px; /* Adjust size as needed */
+    margin: 10px;
+    padding: 20px;
+    color: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+
+    font-family: -apple-system, BlinkMacSystemFont, avenir next, avenir, segoe ui, helvetica neue, helvetica, Cantarell, Ubuntu, roboto, noto, arial, sans-serif;
+
+  }
+  
+  .metric-value {
+    font-size: 48px; /* Large number */
+    font-weight: bold;
+  }
+  
+  .metric-name {
+    font-size: 18px; /* Metric name */
+    font-weight: bold;
+  }
+  
